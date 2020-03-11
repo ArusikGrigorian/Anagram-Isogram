@@ -1,0 +1,25 @@
+function aclean(arr){
+  for(let i=0; i<arr.length; i++){
+    for(let j=1; j<arr.length; j++){
+      if(arr[i].toLowerCase().split("").sort().join("")==
+         arr[j].toLowerCase().split("").sort().join("")){
+          arr[j]=arr[i]; // arr[i]=arr[j]
+      }
+    }
+  }
+ return Array.from(new Set(arr));
+}
+console.log(aclean(["nap","teachers","cheaters","Eva","hectares","PAN","aVe"]));
+
+***
+
+function isIsogram(str){
+  str=str.toLowerCase().split("").sort();
+  for(var i=0; i<str.length; i++){
+    if(str[i]===str[i+1]){
+      return false;
+    }
+  }
+ return true;
+}
+console.log(isIsogram("mumba"));
